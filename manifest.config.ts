@@ -17,11 +17,15 @@ export default defineManifest({
   permissions: [
     'sidePanel',
     'contentSettings',
+    'tabs'
   ],
   content_scripts: [{
     js: ['src/content/main.tsx'],
-    matches: ['https://*/*'],
+    matches: ['https://*.jackwestin.com/*'],
   }],
+  host_permissions: [
+    'https://*.jackwestin.com/*',
+  ],
   side_panel: {
     default_path: 'src/sidepanel/index.html',
   },
